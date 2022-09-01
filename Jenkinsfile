@@ -11,6 +11,14 @@ pipeline{
                 echo 'hello world'
                 sh 'cat /etc/os-release'
             }
+            post{
+                success{
+                    echo "App started successfully"
+                }
+                failure{
+                    echo "App failed to start"
+                }
+            }
         }
         stage('End') {
             steps{
