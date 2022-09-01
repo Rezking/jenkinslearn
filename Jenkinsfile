@@ -6,12 +6,6 @@ pipeline{
                sh 'echo $GIT_BRANCH'
             }
         }
-        stage('build image'){
-            steps{
-                sh 'docker build -t jenkins-image .'
-                sh 'docker run jenkins-image'
-            }
-        }
         stage('Check OS version') {
             steps{
                 echo 'hello world'
